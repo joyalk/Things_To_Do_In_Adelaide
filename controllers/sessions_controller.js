@@ -9,7 +9,7 @@ router.post('/', (req, res) => {
   User
     .findByEmail(email)
     .then(user => {
-      if(user || email == '' || password == '') {
+      if(!user || email == '' || password == '') {
         res.status(400).json({ error: 'email and/or password are incorrect'})
       } else {
       
