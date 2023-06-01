@@ -9,6 +9,8 @@
 
  
   <script src="/js/initialize.js"></script>
+  <script defer src="/js/components/add_event.js"></script>
+  <script defer src="/js/components/event_list.js"></script>
   <script defer src="/js/components/sign_up.js"></script>
   <script defer src="/js/components/login.js"></script>
   
@@ -19,6 +21,7 @@
   <h1>Things to do in Adelaide</h1>
   <nav class="header-nav">
     <ul>
+        <li onClick="renderAddEvent()">add event</li>
         <li class="" onClick="renderSignUp()">person_add</li>
         <li class="" onClick="renderLogin()">login</li>
     </ul>
