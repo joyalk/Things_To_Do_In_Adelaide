@@ -1,16 +1,26 @@
 const pg = require('pg')
 
-let db
+const localDbName = 'things_to_do_in_adelaide'
 
-if (process.env.DB_PASSWORD) {
+let db
+if (process.env.DATABASE_URL) {
   db = new pg.Pool({
-    database: 'things_to_do_in_adelaide',
-    password: process.env.DB_PASSWORD
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false
+    }
   })
-} else { 
-  db = new pg.Pool({
-    database: 'things_to_do_in_adelaide'
-  })
+} else {
+  if (process.env.DEV_DB_PASSWORD) {
+    db = new pg.Pool({
+      database: localDbName,
+      password: process.env.DEV_DB_PASSWORD
+    })
+  } else {
+    db = new pg.Pool({
+      database: localDbName
+    })
+  }
 }
 
 module.exports = db
