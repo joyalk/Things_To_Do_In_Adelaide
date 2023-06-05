@@ -9,7 +9,7 @@ const User = require('../models/user')
 router.post('/', (req, res) => {
   const { name, email, password } = req.body
 
- 
+
   const passwordDigest = bcrypt.hashSync(password, bcrypt.genSaltSync(12), null)
 
   User

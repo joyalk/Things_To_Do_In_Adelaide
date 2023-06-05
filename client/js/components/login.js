@@ -1,5 +1,5 @@
 function renderLogin() {
-    document.querySelector('#page').innerHTML = `
+  document.querySelector('#page').innerHTML = `
       <section class='log-in'>
         <form action="" onSubmit="logIn(event)">
           <h2>Login:</h2>
@@ -15,17 +15,17 @@ function renderLogin() {
         </form>
       </section>
     `
-  }
-  function logIn(event) {
-    event.preventDefault()
-    const form = event.target
-    
-    const data = Object.fromEntries(new FormData(form))
-    fetch('/api/sessions', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    })
+}
+function logIn(event) {
+  event.preventDefault()
+  const form = event.target
+
+  const data = Object.fromEntries(new FormData(form))
+  fetch('/api/sessions', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  })
     .then(res => res.json())
     .then(res => {
       if (res.error) {
@@ -36,10 +36,10 @@ function renderLogin() {
         renderEventList()
       }
     })
-  }
-  
-  function renderError(errorMessage) {
+}
+
+function renderError(errorMessage) {
   document.querySelector('#page').innerHTML =
     `<h2 style='color: red;'>${errorMessage}</h2>` +
     document.querySelector('#page').innerHTML
-  }
+}

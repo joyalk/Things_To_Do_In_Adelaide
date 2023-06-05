@@ -1,5 +1,5 @@
 function renderAddEvent() {
-    document.querySelector('#page').innerHTML = `
+  document.querySelector('#page').innerHTML = `
       <section class='create-event'>
         <form action="" onSubmit="createNewEvent(event)">
           <h2>Add Event</h2>
@@ -23,22 +23,22 @@ function renderAddEvent() {
         </form>
       </section>
     `
-  }
+}
 
-  function createNewEvent(event) {
-    event.preventDefault()
-    const form = event.target
+function createNewEvent(event) {
+  event.preventDefault()
+  const form = event.target
 
-    const data = Object.fromEntries(new FormData(form))
-    
-    fetch('/api/events', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
+  const data = Object.fromEntries(new FormData(form))
+
+  fetch('/api/events', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  })
+    .then(res => res.json())
+    .then(event => {
+      state.events.push(event)
+      renderEventList()
     })
-      .then(res => res.json())
-      .then(event => {
-        state.events.push(event)
-        renderEventList()
-      })
-  }
+}

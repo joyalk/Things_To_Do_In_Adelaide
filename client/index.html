@@ -9,10 +9,14 @@
 
  
   <script src="/js/initialize.js"></script>
+
   <script defer src="/js/components/add_event.js"></script>
   <script defer src="/js/components/event_list.js"></script>
   <script defer src="/js/components/sign_up.js"></script>
   <script defer src="/js/components/login.js"></script>
+  <script defer src="/js/components/comment.js"></script>
+
+  <link rel="stylesheet" href="./css/search.css">
   
 </head>
 
@@ -24,8 +28,15 @@
         <li onClick="renderAddEvent()">add event</li>
         <li class="" onClick="renderSignUp()">person_add</li>
         <li class="" onClick="renderLogin()">login</li>
+        <li class="" onClick="renderViewComments()">view all comments</li>
+        <li class="" onClick="renderEventList()">HomePage</li>
     </ul>
   </nav>
+  
+  <div class="search-bar">
+    <label for="searchInput"></label><input type="text" id="searchInput" placeholder="Search events...">
+    <button onclick="searchEvents()">Search</button>
+  </div>
 
   <main id="page" class="content"></main>
 </body>

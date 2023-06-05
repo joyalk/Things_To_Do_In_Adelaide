@@ -1,0 +1,22 @@
+<button class="" onClick="deleteEvent(event)">delete</button>
+<button class="" onClick="editEvent(event)">edit</button>
+<button class="" onClick="renderComment(${event.id})">add comment</button>
+
+Line 27 to 29 under function add_comment (line 11) in file client/js/components/comment.js
+        .catch(err => {
+            console.error(err)
+        })
+
+function renderViewComments(eventId) {
+    console.log(eventId)
+    const pageElement = document.querySelector('#page')
+    // pageElement.innerHTML = ''
+    const selectedComment = state.comments.filter(myComment => myComment.id == commentId)
+    console.log(selectedComment)
+    const eventHTML = `
+    <h2>${selectedComment.name}</h2>
+    <ul>
+      ${commentsHTML}
+    </ul>`
+  
+}

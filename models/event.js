@@ -18,7 +18,7 @@ const Event = {
     return db
       .query(sql, [name, img, location, description])
       .then(dbRes =>
-         dbRes.rows[0])
+        dbRes.rows[0])
   },
 
   delete: (eventId) => {
@@ -30,8 +30,8 @@ const Event = {
   findById: (eventId) => {
     const sql = 'SELECT * FROM events WHERE id = $1'
     return db
-    .query(sql, [eventId])
-    .then(dbRes => dbRes.rows[0])
+      .query(sql, [eventId])
+      .then(dbRes => dbRes.rows[0])
   },
 
   update: (name, img, location, description, id) => {
@@ -42,6 +42,14 @@ const Event = {
     return db
       .query(sql, [name, img, location, description, id])
       .then(dbRes => dbRes.rows[0])
+  },
+
+  search: (searchTerm) => {
+    const sql = 'SELECT * FROM events WHERE name ILIKE $1 OR description ILIKE $1'
+    const searchValue = `%${searchTerm}%`
+
+    return db.query(sql, [searchValue])
+        .then(dbRes => dbRes.rows)
   }
 }
 
