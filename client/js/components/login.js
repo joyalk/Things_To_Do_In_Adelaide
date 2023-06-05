@@ -35,7 +35,7 @@ function logIn(event) {
     } else {
       state.loggedInUser = res.email
       renderNavBar()
-      renderTreasureList()
+      renderEventList()
       
       renderWelcomeMessage(res.message)
     }
@@ -70,7 +70,7 @@ function logOut(event) {
   .then(res => {
     if (userId) {
       state.loggedOutUser = res
-      renderTreasureList()
+      renderEventList()
     }
   })
 }
