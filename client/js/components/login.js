@@ -1,4 +1,4 @@
-function renderLogin() {
+function renderLogIn() {
     document.querySelector('#page').innerHTML = `
       <section class='log-in'>
         <form action="" onSubmit="logIn(event)">
@@ -16,7 +16,8 @@ function renderLogin() {
       </section>
     `
   }
-  function logIn(event) {
+
+function logIn(event) {
     event.preventDefault()
     const form = event.target
     
@@ -38,8 +39,31 @@ function renderLogin() {
     })
   }
   
-  function renderError(errorMessage) {
+function renderError(errorMessage) {
   document.querySelector('#page').innerHTML =
     `<h2 style='color: red;'>${errorMessage}</h2>` +
     document.querySelector('#page').innerHTML
+  }
+
+function renderLogout() {
+    document.querySelector('#page').innerHTML = `
+      <section class='log-out'>
+        <form action="" onSubmit="logOut(event)">
+          <button>Log out</button>
+        </form>
+      </section>
+    `
+  }
+
+function logOut(event) {
+    fetch('/api/sessions', {
+      method: 'DELETE',
+   
+    })
+    .then(res => {
+      if (userId) {
+        state.loggedOutUser = res
+        renderTreasureList()
+      }
+    })
   }
