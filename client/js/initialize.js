@@ -15,3 +15,4 @@ fetch('/api/sessions')
     state.loggedInUser = data.email
   }
 })
+renderNavBar()

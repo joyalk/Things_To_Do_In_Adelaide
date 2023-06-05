@@ -1,9 +1,9 @@
 const express = require('express')
 const router = express.Router()
 const bcrypt = require('bcrypt')
-
+// models
 const User = require('../models/user')
-
+// routes
 router.post('/', (req, res) => {
   const { email, password } = req.body
   User
@@ -12,19 +12,20 @@ router.post('/', (req, res) => {
       if(!user || email == '' || password == '') {
         res.status(400).json({ error: 'email and/or password are incorrect'})
       } else {
-      
+      // using bcrypt to validate the password:
       const isValidPassword = bcrypt.compareSync(password, user.password_digest)
       if (user && isValidPassword) {
-       
+        // log the user in
         req.session.userId = user.id
-        res.json({ email: user.email })
+        res.json({ email: user.email, message: `Welcome to our web portal ${user.name} !` })
       }
     }})
 })
 
 router.get('/', (req, res) => {
   const userId = req.session.userId
- 
+
+  // if logged in:
   if (userId) {
     User
       .findById(userId)
@@ -43,7 +44,7 @@ router.delete('/', (req, res) => {
   
   } else {  
   res.clearCookie('user_sid');
-  res.json({message: 'succefully logged out'})
+  res.json({message: 'You are succefully logged out'})
 }
   }) 
 })
