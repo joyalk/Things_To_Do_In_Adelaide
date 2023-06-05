@@ -1,34 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-
+  <!-- Material Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
  
-  <script src="/js/initialize.js"></script>
-  <script defer src="/js/components/add_event.js"></script>
-  <script defer src="/js/components/event_list.js"></script>
+  <script defer src="/js/components/add_treasure.js"></script>
+  <script defer src="/js/components/treasure_list.js"></script>
   <script defer src="/js/components/sign_up.js"></script>
   <script defer src="/js/components/login.js"></script>
+  <script defer src="/js/components/nav_bar.js"></script>
+  <script defer src="/js/initialize.js"></script>
   
 </head>
-
 <body>
     
   <h1>Things to do in Adelaide</h1>
+  
   <nav class="header-nav">
-    <ul>
-        <li onClick="renderAddEvent()">add event</li>
-        <li class="" onClick="renderSignUp()">person_add</li>
-        <li class="" onClick="renderLogIn()">login</li>
-        <li class="material-symbols-outlined logout" onClick="renderLogout()">logout</li>
-    </ul>
+  
   </nav>
 
   <main id="page" class="content"></main>
 </body>
-
 </html>
