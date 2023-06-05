@@ -34,4 +34,18 @@ router.get('/', (req, res) => {
   }
 })
 
+router.delete('/', (req, res) => {
+  const userId = req.session.userId
+  req.session.destroy(error => {
+  if(error) {
+    console.log(error)
+    res.status(500)
+  
+  } else {  
+  res.clearCookie('user_sid');
+  res.json({message: 'succefully logged out'})
+}
+  }) 
+})
+
 module.exports = router
