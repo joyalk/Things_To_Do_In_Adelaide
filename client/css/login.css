@@ -1,0 +1,46 @@
+.log-in {
+    padding-top: 100px;
+    width:600px;
+     padding-left:200px; 
+    
+}
+.log-in input{
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;  
+    
+
+}
+.log-in  button{
+   
+    background-color:rgb(112, 184, 184);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    border-radius: 16px;
+
+}
+.log-in button:hover {
+    opacity: 2;
+}
+.log-out button{
+    background-color:rgb(112, 184, 184);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 10%;
+    opacity: 0.9;
+    border-radius: 16px;
+
+}
+.log-out button:hover {
+    opacity: 2;
+}

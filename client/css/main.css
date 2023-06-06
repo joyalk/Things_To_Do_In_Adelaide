@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-image: url(/css/75.jpg);
+    margin: 0 2rem;
+    size: 50%;
+    
+  }
+  /* https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbf8CAK8ORvPt-Y_ZkVlLjyOByjUWT7tBQdQ&usqp=CAU */
+  h1 {
+    text-align: center;
+    font-size: 70px;
+    font-weight: 600;
+    background-image: url(https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y29jb251dCUyMHRyZWV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60);
+    background-size: 250px;
+    background-repeat: repeat;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  
+  
+  
+  
+  
+  

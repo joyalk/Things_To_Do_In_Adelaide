@@ -1,0 +1,30 @@
+.header-nav {
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .header-nav ul {
+    display: inline-flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    
+  }
+  
+
+  .user-nav{
+    display: flex;
+    float: right;
+   
+  }  
+  
+  .user-nav ul li{
+    background-color:rgb(112, 184, 184);
+     margin-right:20px;
+        color: white;
+        padding: 1em 1.5em;
+        text-decoration: none;
+        text-transform: uppercase;
+        border-radius: 16px;
+  }
+  
