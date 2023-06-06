@@ -16,10 +16,10 @@ function renderEvents() {
       <section class="event" data-id="${event.id}">
         <header>
           <h2>${event.name}</h2>
-          <span class="" onClick="deleteEvent(event)">delete</span>
-          <span class="" onClick="renderEditForm(event)">edit</span>
-          <button class="" onClick="renderComment(${event.id})">add comment</button>
-          <button class="" onClick="renderViewComments(${event.id}, '${event.name}')">view comment</button>
+          <span class="nav_edit_del" onClick="deleteEvent(event)">DELETE</span>
+          <span class="nav_edit_del" onClick="renderEditForm(event)">EDIT</span>
+          <button class="nav_edit_del" onClick="renderComment(${event.id})">ADD COMMENT</button>
+          <button class="nav_edit_del" onClick="renderViewComments(${event.id}, '${event.name}')">VIEW COMMENTS</button>
         </header>
         <img src="${event.img}" alt="" class="event-image">
         <p>${event.location}</p>
