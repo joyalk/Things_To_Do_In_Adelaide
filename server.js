@@ -6,6 +6,7 @@ const sessions = require('./middlewares/sessions')
 const eventsController = require('./controllers/events_controller')
 const usersController = require('./controllers/users_controller')
 const sessionsController = require('./controllers/sessions_controller')
+const commentController = require('./controllers/comment_controller')
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -23,3 +24,4 @@ app.use(sessions)
 app.use('/api/events', eventsController)
 app.use('/api/users', usersController)
 app.use('/api/sessions', sessionsController)
+app.use('/api/comment', commentController)

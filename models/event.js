@@ -40,6 +40,14 @@ const Event = {
       .query(sql, [name, img, location, description, id])
       .then(dbRes => dbRes.rows[0])
 
+  },
+  
+  search: (searchTerm) => {
+    const sql = 'SELECT * FROM events WHERE name ILIKE $1 OR description ILIKE $1'
+    const searchValue = `%${searchTerm}%`
+
+    return db.query(sql, [searchValue])
+        .then(dbRes => dbRes.rows)
   }
  }
 

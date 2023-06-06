@@ -13,6 +13,7 @@
   <script defer src="/js/components/event_list.js"></script>
   <script defer src="/js/components/sign_up.js"></script>
   <script defer src="/js/components/login.js"></script>
+  <script defer src="/js/components/comment.js"></script>
   <script defer src="/js/components/nav_bar.js"></script>
   <script defer src="/js/initialize.js"></script>
 
@@ -25,6 +26,11 @@
   <nav class="header-nav">
   
   </nav>
+
+  <div class="search-bar">
+    <label for="searchInput"></label><input type="text" id="searchInput" placeholder="Search events...">
+    <button onclick="searchEvents()">Search</button>
+  </div>
 
   <main id="page" class="content"></main>
 </body>

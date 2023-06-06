@@ -1,18 +1,28 @@
 const state = {
-    events: []
-  }
+  events: [],
+  comments: []
+}
 fetch('/api/events')
-.then(res => res.json())
-.then(events => {
+  .then(res => res.json())
+  .then(events => {
       state.events = events
-renderEventList()
-})
+  renderEventList()
+  })
 
 fetch('/api/sessions')
-.then(res => res.json())
-.then(data => {
-  if (data.result === 'successful') {
-    state.loggedInUser = data.email
-  }
+  .then(res => res.json())
+  .then(data => {
+      if (data.result === 'successful') {
+          state.loggedInUser = data.email
+      }
+  })
+
+fetch(`/api/comment`, {
+  method: 'GET',
 })
+  .then(res => res.json())
+  .then(comments => {
+      state.comments = comments
+  })
+  
 renderNavBar()

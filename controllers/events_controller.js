@@ -47,4 +47,12 @@ router.post('/:id', (req, res) => {
 
 })
 
+router.get('/search', (req, res) => {
+  const searchTerm = req.query.term
+
+  Event
+      .search(searchTerm)
+      .then(events => res.json(events))
+})
+
 module.exports = router
